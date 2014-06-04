@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/MaxGfeller/browserify-widget/issues"
   },
-  "homepage": "https://github.com/MaxGfeller/browserify-widget"
+  "homepage": "https://github.com/MaxGfeller/browserify-widget",
+  "dependencies": {
+    "domify": "^1.2.2"
+  }
 }
