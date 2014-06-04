@@ -1,3 +1,5 @@
+var domify = require('domify');
+
 function Widget(html) {
     this.html = html;
     this.renderedTo = [];
@@ -7,11 +9,9 @@ function Widget(html) {
 Widget.prototype.appendTo = function(el) {
     if (typeof el === 'string') el = document.querySelector(el);
 
-    var div = document.createElement('div');
-    div.innerHTML = this.html;
-    el.appendChild(div);
+    el.appendChild(domify(this.html));
 
-    this.renderedTo.push(div);
+    this.renderedTo.push(el);
     this._registerEvents();
 }
 
