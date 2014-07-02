@@ -77,4 +77,6 @@ Widget.prototype._getIndexOfDoublePoint = function(s) {
     return false;
 }
 
-module.exports = Widget;
+module.exports = function(html) {
+    return new Widget(html)
+}
