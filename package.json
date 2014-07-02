@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/MaxGfeller/browserify-widget",
   "dependencies": {
-    "domify": "^1.2.2"
+    "domify": "^1.2.2",
+    "inherits": "^2.0.1"
   }
 }
