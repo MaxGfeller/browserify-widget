@@ -1,6 +1,6 @@
 {
   "name": "browserify-widget",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Easily create html widgets with browserify",
   "main": "index.js",
   "scripts": {
