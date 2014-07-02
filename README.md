@@ -8,10 +8,7 @@ It makes it a bit easier to create html widgets with the help of
 To create a widget you need this and the `inherits` module:
 
 ```javascript
-var inherits = require('inherits');
 var Widget = require('browserify-widget');
-
-inherits(MyWidget, Widget);
 
 var html = '<button id="like-button">Click to like</button><span class="text"></span>';
 
@@ -21,10 +18,8 @@ var events = {
     }
 }
 
-function MyWidget() {
-    Widget.call(this, html);
-    this.addEvents(events);
-}
+var myWidget = Widget(html);
+myWidget.addEvents(events);
 ```
 
 You can avoid writing the html directly into your javascripts by using the
