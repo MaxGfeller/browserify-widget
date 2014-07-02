@@ -1,4 +1,8 @@
 var domify = require('domify');
+var inherits = require('inherits');
+var EventEmitter = require('events').EventEmitter;
+
+inherits(Widget, EventEmitter);
 
 function Widget(html) {
     this.html = html;
@@ -10,7 +14,7 @@ Widget.prototype.appendTo = function(el) {
     if (typeof el === 'string') el = document.querySelector(el);
 
     el.appendChild(domify(this.html));
-
+    this.emit('render', el);
     this.renderedTo.push(el);
     this._registerEvents();
 }
@@ -19,7 +23,7 @@ Widget.prototype.renderTo = function(el) {
     if (typeof el === 'string') el = document.querySelector(el);
 
     el.innerHTML = this.html;
-
+    this.emit('render', el);
     this.renderedTo.push(el);
     this._registerEvents(el);
 }
